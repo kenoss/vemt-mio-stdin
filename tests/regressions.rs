@@ -5,8 +5,8 @@ use std::sync::Arc;
 use std::time::Duration;
 use std::{net, thread};
 
-use mio::net::{TcpListener, TcpStream};
-use mio::{Events, Interest, Poll, Token, Waker};
+use vemt_mio_stdin::net::{TcpListener, TcpStream};
+use vemt_mio_stdin::{Events, Interest, Poll, Token, Waker};
 
 mod util;
 use util::{any_local_address, init, init_with_poll};
@@ -108,7 +108,7 @@ fn issue_1205() {
 #[test]
 #[cfg(unix)]
 fn issue_1403() {
-    use mio::net::UnixDatagram;
+    use vemt_mio_stdin::net::UnixDatagram;
     use util::temp_file;
 
     init();

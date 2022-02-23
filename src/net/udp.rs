@@ -36,8 +36,8 @@ use std::os::windows::io::{AsRawSocket, FromRawSocket, IntoRawSocket, RawSocket}
 /// // SENDER -> sends a message.
 /// // ECHOER -> listens and prints the message received.
 ///
-/// use mio::net::UdpSocket;
-/// use mio::{Events, Interest, Poll, Token};
+/// use vemt_mio_stdin::net::UdpSocket;
+/// use vemt_mio_stdin::{Events, Interest, Poll, Token};
 /// use std::time::Duration;
 ///
 /// const SENDER: Token = Token(0);
@@ -102,7 +102,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// // We must bind it to an open address.
     /// let socket = match UdpSocket::bind("127.0.0.1:0".parse()?) {
@@ -149,7 +149,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let addr = "127.0.0.1:0".parse()?;
     /// let socket = UdpSocket::bind(addr)?;
@@ -170,7 +170,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let addr = "127.0.0.1:0".parse()?;
     /// let peer_addr = "127.0.0.1:11100".parse()?;
@@ -195,7 +195,7 @@ impl UdpSocket {
     /// ```no_run
     /// # use std::error::Error;
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     ///
@@ -229,7 +229,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     ///
@@ -265,7 +265,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     ///
@@ -336,7 +336,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let broadcast_socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     /// if broadcast_socket.broadcast()? == false {
@@ -366,7 +366,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let broadcast_socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     /// assert_eq!(broadcast_socket.broadcast()?, false);
@@ -447,7 +447,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     /// if socket.ttl()? < 255 {
@@ -476,7 +476,7 @@ impl UdpSocket {
     /// # use std::error::Error;
     /// #
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::net::UdpSocket;
+    /// use vemt_mio_stdin::net::UdpSocket;
     ///
     /// let socket = UdpSocket::bind("127.0.0.1:0".parse()?)?;
     /// socket.set_ttl(255)?;

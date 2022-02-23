@@ -1,8 +1,8 @@
 #![cfg(all(feature = "os-poll", feature = "net"))]
 
 use log::{debug, info};
-use mio::net::UdpSocket;
-use mio::{Events, Interest, Poll, Registry, Token};
+use vemt_mio_stdin::net::UdpSocket;
+use vemt_mio_stdin::{Events, Interest, Poll, Registry, Token};
 use std::net::{self, IpAddr, SocketAddr};
 #[cfg(unix)]
 use std::os::unix::io::{AsRawFd, FromRawFd, IntoRawFd};
@@ -31,7 +31,7 @@ const ID3: Token = Token(4);
 #[test]
 #[cfg(all(unix, not(debug_assertions)))]
 fn assert_size() {
-    use mio::net::*;
+    use vemt_mio_stdin::net::*;
     use std::mem::size_of;
 
     // Without debug assertions enabled `TcpListener`, `TcpStream` and

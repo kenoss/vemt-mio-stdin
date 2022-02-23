@@ -6,8 +6,8 @@ use std::sync::{Arc, Barrier};
 use std::thread;
 use std::time::Duration;
 
-use mio::unix::pipe::{self, Receiver, Sender};
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::unix::pipe::{self, Receiver, Sender};
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 
 mod util;
 use util::{assert_would_block, expect_events, ExpectEvent};

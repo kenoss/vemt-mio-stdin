@@ -6,9 +6,9 @@ use std::thread::{self, sleep};
 use std::time::Duration;
 use std::{fmt, io};
 
-use mio::event::Source;
-use mio::net::{TcpListener, TcpStream, UdpSocket};
-use mio::{event, Events, Interest, Poll, Registry, Token};
+use vemt_mio_stdin::event::Source;
+use vemt_mio_stdin::net::{TcpListener, TcpStream, UdpSocket};
+use vemt_mio_stdin::{event, Events, Interest, Poll, Registry, Token};
 
 mod util;
 use util::{
@@ -114,7 +114,7 @@ fn poll_closes_fd() {
 fn drop_cancels_interest_and_shuts_down() {
     init();
 
-    use mio::net::TcpStream;
+    use vemt_mio_stdin::net::TcpStream;
     use std::io;
     use std::io::Read;
     use std::net::TcpListener;

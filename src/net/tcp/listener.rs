@@ -20,8 +20,8 @@ use crate::{event, sys, Interest, Registry, Token};
 #[cfg_attr(not(feature = "os-poll"), doc = "```ignore")]
 /// # use std::error::Error;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Events, Interest, Poll, Token};
-/// use mio::net::TcpListener;
+/// use vemt_mio_stdin::{Events, Interest, Poll, Token};
+/// use vemt_mio_stdin::net::TcpListener;
 /// use std::time::Duration;
 ///
 /// let mut listener = TcpListener::bind("127.0.0.1:34255".parse()?)?;

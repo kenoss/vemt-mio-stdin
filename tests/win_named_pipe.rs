@@ -6,8 +6,8 @@ use std::os::windows::fs::OpenOptionsExt;
 use std::os::windows::io::{FromRawHandle, IntoRawHandle};
 use std::time::Duration;
 
-use mio::windows::NamedPipe;
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::windows::NamedPipe;
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 use rand::Rng;
 use winapi::shared::winerror::*;
 use winapi::um::winbase::FILE_FLAG_OVERLAPPED;

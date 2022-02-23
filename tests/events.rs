@@ -2,8 +2,8 @@
 
 use std::time::Duration;
 
-use mio::net::TcpStream;
-use mio::{event, Token, Waker};
+use vemt_mio_stdin::net::TcpStream;
+use vemt_mio_stdin::{event, Token, Waker};
 
 mod util;
 use util::init_with_poll;

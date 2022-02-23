@@ -8,8 +8,8 @@ use std::sync::{mpsc::channel, Arc, Barrier};
 use std::thread;
 use std::time::Duration;
 
-use mio::net::TcpStream;
-use mio::{Interest, Token};
+use vemt_mio_stdin::net::TcpStream;
+use vemt_mio_stdin::{Interest, Token};
 
 #[macro_use]
 mod util;
@@ -752,7 +752,7 @@ fn start_listener(
 
 #[test]
 fn hup_event_on_disconnect() {
-    use mio::net::TcpListener;
+    use vemt_mio_stdin::net::TcpListener;
 
     let (mut poll, mut events) = init_with_poll();
     let addr = "127.0.0.1:0".parse().unwrap();

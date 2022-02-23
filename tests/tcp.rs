@@ -1,7 +1,7 @@
 #![cfg(all(feature = "os-poll", feature = "net"))]
 
-use mio::net::{TcpListener, TcpStream};
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::net::{TcpListener, TcpStream};
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 use std::io::{self, Read, Write};
 use std::net::{self, Shutdown};
 use std::sync::mpsc::channel;
@@ -22,7 +22,7 @@ const SERVER: Token = Token(2);
 #[test]
 #[cfg(all(unix, not(debug_assertions)))]
 fn assert_size() {
-    use mio::net::*;
+    use vemt_mio_stdin::net::*;
     use std::mem::size_of;
 
     // Without debug assertions enabled `TcpListener`, `TcpStream` and

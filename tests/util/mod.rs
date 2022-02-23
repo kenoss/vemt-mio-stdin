@@ -13,9 +13,9 @@ use std::time::Duration;
 use std::{env, fmt, fs, io};
 
 use log::{error, warn};
-use mio::event::Event;
-use mio::net::TcpStream;
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::event::Event;
+use vemt_mio_stdin::net::TcpStream;
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 
 pub fn init() {
     static INIT: Once = Once::new();

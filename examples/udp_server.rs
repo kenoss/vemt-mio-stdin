@@ -1,8 +1,8 @@
 // You can run this example from the root of the mio repo:
 // cargo run --example udp_server --features="os-poll net"
 use log::warn;
-use mio::net::UdpSocket;
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::net::UdpSocket;
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 use std::io;
 
 // A token to allow us to identify which event is for the `UdpSocket`.

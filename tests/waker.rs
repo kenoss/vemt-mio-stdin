@@ -1,6 +1,6 @@
 #![cfg(all(feature = "os-poll", feature = "net"))]
 
-use mio::{Events, Poll, Token, Waker};
+use vemt_mio_stdin::{Events, Poll, Token, Waker};
 use std::sync::{Arc, Barrier};
 use std::thread;
 use std::time::Duration;

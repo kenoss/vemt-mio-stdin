@@ -21,8 +21,8 @@
 #[cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
 /// # use std::error::Error;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Events, Interest, Poll, Token};
-/// use mio::net::TcpListener;
+/// use vemt_mio_stdin::{Events, Interest, Poll, Token};
+/// use vemt_mio_stdin::net::TcpListener;
 ///
 /// use std::thread;
 /// use std::io::{self, Read};

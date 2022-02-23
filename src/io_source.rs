@@ -39,8 +39,8 @@ use crate::{event, Interest, Registry, Token};
 /// ```
 /// # use std::error::Error;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Interest, Poll, Token};
-/// use mio::IoSource;
+/// use vemt_mio_stdin::{Interest, Poll, Token};
+/// use vemt_mio_stdin::IoSource;
 ///
 /// use std::net;
 ///

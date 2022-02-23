@@ -140,7 +140,7 @@ pub mod guide {
     //!
     #![cfg_attr(feature = "os-poll", doc = "```")]
     #![cfg_attr(not(feature = "os-poll"), doc = "```ignore")]
-    //! # use mio::{Poll, Events};
+    //! # use vemt_mio_stdin::{Poll, Events};
     //! # fn main() -> std::io::Result<()> {
     //! // `Poll` allows for polling of readiness events.
     //! let poll = Poll::new()?;
@@ -175,8 +175,8 @@ pub mod guide {
     //!
     #![cfg_attr(all(feature = "os-poll", feature = "net"), doc = "```")]
     #![cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
-    //! # use mio::net::TcpListener;
-    //! # use mio::{Poll, Token, Interest};
+    //! # use vemt_mio_stdin::net::TcpListener;
+    //! # use vemt_mio_stdin::{Poll, Token, Interest};
     //! # fn main() -> std::io::Result<()> {
     //! # let poll = Poll::new()?;
     //! # let address = "127.0.0.1:0".parse().unwrap();
@@ -216,8 +216,8 @@ pub mod guide {
     #![cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
     //! # use std::io;
     //! # use std::time::Duration;
-    //! # use mio::net::TcpListener;
-    //! # use mio::{Poll, Token, Interest, Events};
+    //! # use vemt_mio_stdin::net::TcpListener;
+    //! # use vemt_mio_stdin::{Poll, Token, Interest, Events};
     //! # fn main() -> io::Result<()> {
     //! # let mut poll = Poll::new()?;
     //! # let mut events = Events::with_capacity(128);

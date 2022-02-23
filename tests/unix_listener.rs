@@ -1,7 +1,7 @@
 #![cfg(all(unix, feature = "os-poll", feature = "net"))]
 
-use mio::net::UnixListener;
-use mio::{Interest, Token};
+use vemt_mio_stdin::net::UnixListener;
+use vemt_mio_stdin::{Interest, Token};
 use std::io::{self, Read};
 use std::os::unix::net;
 use std::path::{Path, PathBuf};

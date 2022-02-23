@@ -41,7 +41,7 @@ use std::io;
 /// use std::time::Duration;
 /// use std::sync::Arc;
 ///
-/// use mio::{Events, Token, Poll, Waker};
+/// use vemt_mio_stdin::{Events, Token, Poll, Waker};
 ///
 /// const WAKE_TOKEN: Token = Token(10);
 ///

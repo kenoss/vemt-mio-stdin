@@ -1,7 +1,7 @@
 #![cfg(all(feature = "os-poll", feature = "net"))]
 
-use mio::net::TcpListener;
-use mio::{Interest, Token};
+use vemt_mio_stdin::net::TcpListener;
+use vemt_mio_stdin::{Interest, Token};
 use std::io::{self, Read};
 use std::net::{self, SocketAddr};
 #[cfg(unix)]

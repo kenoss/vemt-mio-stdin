@@ -55,8 +55,8 @@ use crate::{event, Interest, Registry, Token};
 /// ```
 /// use std::io::{self, Read, Write};
 ///
-/// use mio::{Poll, Events, Interest, Token};
-/// use mio::unix::pipe;
+/// use vemt_mio_stdin::{Poll, Events, Interest, Token};
+/// use vemt_mio_stdin::unix::pipe;
 ///
 /// // Unique tokens for the two ends of the channel.
 /// const PIPE_RECV: Token = Token(0);
@@ -110,8 +110,8 @@ use crate::{event, Interest, Registry, Token};
 /// ```
 /// # use std::io;
 /// #
-/// # use mio::{Poll, Events, Interest, Token};
-/// # use mio::unix::pipe;
+/// # use vemt_mio_stdin::{Poll, Events, Interest, Token};
+/// # use vemt_mio_stdin::unix::pipe;
 /// #
 /// # const PIPE_RECV: Token = Token(0);
 /// # const PIPE_SEND: Token = Token(1);
@@ -194,7 +194,7 @@ pub fn new() -> io::Result<(Sender, Receiver)> {
         target_os = "macos",
         target_os = "illumos",
     )))]
-    compile_error!("unsupported target for `mio::unix::pipe`");
+    compile_error!("unsupported target for `vemt_mio_stdin::unix::pipe`");
 
     // Safety: we just initialised the `fds` above.
     let r = unsafe { Receiver::from_raw_fd(fds[0]) };

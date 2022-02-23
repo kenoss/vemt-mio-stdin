@@ -35,8 +35,8 @@ use std::os::unix::io::RawFd;
 )]
 /// # use std::error::Error;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Interest, Poll, Token};
-/// use mio::unix::SourceFd;
+/// use vemt_mio_stdin::{Interest, Poll, Token};
+/// use vemt_mio_stdin::unix::SourceFd;
 ///
 /// use std::os::unix::io::AsRawFd;
 /// use std::net::TcpListener;
@@ -59,8 +59,8 @@ use std::os::unix::io::RawFd;
 ///
 #[cfg_attr(all(feature = "os-poll", feature = "os-ext"), doc = "```")]
 #[cfg_attr(not(all(feature = "os-poll", feature = "os-ext")), doc = "```ignore")]
-/// use mio::{event, Interest, Registry, Token};
-/// use mio::unix::SourceFd;
+/// use vemt_mio_stdin::{event, Interest, Registry, Token};
+/// use vemt_mio_stdin::unix::SourceFd;
 ///
 /// use std::os::unix::io::RawFd;
 /// use std::io;

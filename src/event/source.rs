@@ -40,9 +40,9 @@ use std::io;
 ///
 #[cfg_attr(all(feature = "os-poll", feature = "net"), doc = "```")]
 #[cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
-/// use mio::{Interest, Registry, Token};
-/// use mio::event::Source;
-/// use mio::net::TcpStream;
+/// use vemt_mio_stdin::{Interest, Registry, Token};
+/// use vemt_mio_stdin::event::Source;
+/// use vemt_mio_stdin::net::TcpStream;
 ///
 /// use std::io;
 ///

@@ -34,8 +34,8 @@ use std::{fmt, io};
 #[cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
 /// # use std::error::Error;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Events, Poll, Interest, Token};
-/// use mio::net::TcpStream;
+/// use vemt_mio_stdin::{Events, Poll, Interest, Token};
+/// use vemt_mio_stdin::net::TcpStream;
 ///
 /// use std::net::{self, SocketAddr};
 ///
@@ -132,8 +132,8 @@ use std::{fmt, io};
 /// # use std::error::Error;
 /// # use std::net;
 /// # fn main() -> Result<(), Box<dyn Error>> {
-/// use mio::{Poll, Interest, Token};
-/// use mio::net::TcpStream;
+/// use vemt_mio_stdin::{Poll, Interest, Token};
+/// use vemt_mio_stdin::net::TcpStream;
 /// use std::net::SocketAddr;
 /// use std::time::Duration;
 /// use std::thread;
@@ -287,8 +287,8 @@ impl Poll {
     #[cfg_attr(not(all(feature = "os-poll", feature = "net")), doc = "```ignore")]
     /// # use std::error::Error;
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::{Events, Poll, Interest, Token};
-    /// use mio::net::TcpStream;
+    /// use vemt_mio_stdin::{Events, Poll, Interest, Token};
+    /// use vemt_mio_stdin::net::TcpStream;
     ///
     /// use std::net::{TcpListener, SocketAddr};
     /// use std::thread;
@@ -355,7 +355,7 @@ cfg_os_poll! {
         /// ```
         /// # use std::error::Error;
         /// # fn main() -> Result<(), Box<dyn Error>> {
-        /// use mio::{Poll, Events};
+        /// use vemt_mio_stdin::{Poll, Events};
         /// use std::time::Duration;
         ///
         /// let mut poll = match Poll::new() {
@@ -453,8 +453,8 @@ impl Registry {
     /// # use std::error::Error;
     /// # use std::net;
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::{Events, Poll, Interest, Token};
-    /// use mio::net::TcpStream;
+    /// use vemt_mio_stdin::{Events, Poll, Interest, Token};
+    /// use vemt_mio_stdin::net::TcpStream;
     /// use std::net::SocketAddr;
     /// use std::time::{Duration, Instant};
     ///
@@ -531,8 +531,8 @@ impl Registry {
     /// # use std::error::Error;
     /// # use std::net;
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::{Poll, Interest, Token};
-    /// use mio::net::TcpStream;
+    /// use vemt_mio_stdin::{Poll, Interest, Token};
+    /// use vemt_mio_stdin::net::TcpStream;
     /// use std::net::SocketAddr;
     ///
     /// let poll = Poll::new()?;
@@ -598,8 +598,8 @@ impl Registry {
     /// # use std::error::Error;
     /// # use std::net;
     /// # fn main() -> Result<(), Box<dyn Error>> {
-    /// use mio::{Events, Poll, Interest, Token};
-    /// use mio::net::TcpStream;
+    /// use vemt_mio_stdin::{Events, Poll, Interest, Token};
+    /// use vemt_mio_stdin::net::TcpStream;
     /// use std::net::SocketAddr;
     /// use std::time::Duration;
     ///

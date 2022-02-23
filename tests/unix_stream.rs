@@ -1,7 +1,7 @@
 #![cfg(all(unix, feature = "os-poll", feature = "net"))]
 
-use mio::net::UnixStream;
-use mio::{Interest, Token};
+use vemt_mio_stdin::net::UnixStream;
+use vemt_mio_stdin::{Interest, Token};
 use std::io::{self, IoSlice, IoSliceMut, Read, Write};
 use std::net::Shutdown;
 use std::os::unix::net;

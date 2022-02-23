@@ -24,8 +24,8 @@ use crate::{event, Interest, Registry, Token};
 /// # fn main() -> Result<(), Box<dyn Error>> {
 /// let address: SocketAddr = "127.0.0.1:0".parse()?;
 /// let listener = TcpListener::bind(address)?;
-/// use mio::{Events, Interest, Poll, Token};
-/// use mio::net::TcpStream;
+/// use vemt_mio_stdin::{Events, Interest, Poll, Token};
+/// use vemt_mio_stdin::net::TcpStream;
 /// use std::time::Duration;
 ///
 /// let mut stream = TcpStream::connect(listener.local_addr()?)?;

@@ -1,7 +1,7 @@
 #![cfg(any(target_os = "freebsd", target_os = "dragonfly"))]
 #![cfg(all(feature = "os-poll", feature = "net"))]
 
-use mio::{event::Source, Events, Interest, Poll, Registry, Token};
+use vemt_mio_stdin::{event::Source, Events, Interest, Poll, Registry, Token};
 use std::{
     fs::File,
     io, mem,

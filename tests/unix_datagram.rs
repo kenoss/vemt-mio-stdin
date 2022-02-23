@@ -1,7 +1,7 @@
 #![cfg(all(unix, feature = "os-poll", feature = "net"))]
 
-use mio::net::UnixDatagram;
-use mio::{Interest, Token};
+use vemt_mio_stdin::net::UnixDatagram;
+use vemt_mio_stdin::{Interest, Token};
 use std::io;
 use std::net::Shutdown;
 use std::os::unix::net;

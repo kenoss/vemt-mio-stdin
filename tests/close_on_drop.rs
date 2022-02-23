@@ -3,8 +3,8 @@
 use std::io::Read;
 
 use log::debug;
-use mio::net::{TcpListener, TcpStream};
-use mio::{Events, Interest, Poll, Token};
+use vemt_mio_stdin::net::{TcpListener, TcpStream};
+use vemt_mio_stdin::{Events, Interest, Poll, Token};
 
 mod util;
 use util::{any_local_address, init};

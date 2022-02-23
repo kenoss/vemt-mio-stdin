@@ -1,4 +1,4 @@
-use mio::Interest;
+use vemt_mio_stdin::Interest;
 
 #[test]
 fn is_tests() {

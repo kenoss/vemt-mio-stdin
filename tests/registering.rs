@@ -6,9 +6,9 @@ use std::time::Duration;
 
 use log::{debug, info, trace};
 #[cfg(debug_assertions)]
-use mio::net::UdpSocket;
-use mio::net::{TcpListener, TcpStream};
-use mio::{Events, Interest, Poll, Registry, Token};
+use vemt_mio_stdin::net::UdpSocket;
+use vemt_mio_stdin::net::{TcpListener, TcpStream};
+use vemt_mio_stdin::{Events, Interest, Poll, Registry, Token};
 
 mod util;
 #[cfg(debug_assertions)]
