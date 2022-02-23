@@ -82,3 +82,7 @@ required-features = ["os-poll", "net"]
 [[example]]
 name = "udp_server"
 required-features = ["os-poll", "net"]
+
+[[example]]
+name = "read_stdin"
+required-features = ["stdin"]
