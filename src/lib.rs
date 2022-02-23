@@ -60,6 +60,11 @@ cfg_net! {
     pub mod net;
 }
 
+cfg_stdin! {
+    #[allow(missing_docs)]
+    pub mod stdin;
+}
+
 #[doc(no_inline)]
 pub use event::Events;
 pub use interest::Interest;

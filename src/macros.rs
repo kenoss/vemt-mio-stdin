@@ -46,6 +46,17 @@ macro_rules! cfg_net {
     }
 }
 
+/// The `net` feature is enabled.
+macro_rules! cfg_stdin {
+    ($($item:item)*) => {
+        $(
+            #[cfg(feature = "stdin")]
+            #[cfg_attr(docsrs, doc(cfg(feature = "stdin")))]
+            $item
+        )*
+    }
+}
+
 /// One of the features enabled that needs `IoSource`. That is `net` or `os-ext`
 /// on Unix (for `pipe`).
 macro_rules! cfg_io_source {

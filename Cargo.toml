@@ -38,6 +38,8 @@ os-poll = []
 os-ext = ["os-poll"]
 # Enables `mio::net` module containing networking primitives.
 net = []
+# Enables `vemt_mio_stdin::stdin` module containing networking primitives.
+stdin = ["os-ext"]
 
 [dependencies]
 log = "0.4.8"
