@@ -9,17 +9,17 @@ use std::os::unix::net;
 use std::path::Path;
 
 /// A non-blocking Unix stream socket.
-pub struct UnixStream {
-    inner: IoSource<net::UnixStream>,
+pub struct StdinStream {
+    inner: IoSource<net::StdinStream>,
 }
 
-impl UnixStream {
+impl StdinStream {
     /// Connects to the socket named by `path`.
-    pub fn connect<P: AsRef<Path>>(path: P) -> io::Result<UnixStream> {
-        sys::uds::stream::connect(path.as_ref()).map(UnixStream::from_std)
+    pub fn connect<P: AsRef<Path>>(path: P) -> io::Result<StdinStream> {
+        sys::uds::stream::connect(path.as_ref()).map(StdinStream::from_std)
     }
 
-    /// Creates a new `UnixStream` from a standard `net::UnixStream`.
+    /// Creates a new `StdinStream` from a standard `net::StdinStream`.
     ///
     /// This function is intended to be used to wrap a Unix stream from the
     /// standard library in the Mio equivalent. The conversion assumes nothing
@@ -31,18 +31,18 @@ impl UnixStream {
     /// The Unix stream here will not have `connect` called on it, so it
     /// should already be connected via some other means (be it manually, or
     /// the standard library).
-    pub fn from_std(stream: net::UnixStream) -> UnixStream {
-        UnixStream {
+    pub fn from_std(stream: net::StdinStream) -> StdinStream {
+        StdinStream {
             inner: IoSource::new(stream),
         }
     }
 
     /// Creates an unnamed pair of connected sockets.
     ///
-    /// Returns two `UnixStream`s which are connected to each other.
-    pub fn pair() -> io::Result<(UnixStream, UnixStream)> {
+    /// Returns two `StdinStream`s which are connected to each other.
+    pub fn pair() -> io::Result<(StdinStream, StdinStream)> {
         sys::uds::stream::pair().map(|(stream1, stream2)| {
-            (UnixStream::from_std(stream1), UnixStream::from_std(stream2))
+            (StdinStream::from_std(stream1), StdinStream::from_std(stream2))
         })
     }
 
@@ -71,7 +71,7 @@ impl UnixStream {
     }
 }
 
-impl Read for UnixStream {
+impl Read for StdinStream {
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
         self.inner.do_io(|inner| (&*inner).read(buf))
     }
@@ -81,7 +81,7 @@ impl Read for UnixStream {
     }
 }
 
-impl<'a> Read for &'a UnixStream {
+impl<'a> Read for &'a StdinStream {
     fn read(&mut self, buf: &mut [u8]) -> io::Result<usize> {
         self.inner.do_io(|inner| (&*inner).read(buf))
     }
@@ -91,7 +91,7 @@ impl<'a> Read for &'a UnixStream {
     }
 }
 
-impl Write for UnixStream {
+impl Write for StdinStream {
     fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
         self.inner.do_io(|inner| (&*inner).write(buf))
     }
@@ -105,7 +105,7 @@ impl Write for UnixStream {
     }
 }
 
-impl<'a> Write for &'a UnixStream {
+impl<'a> Write for &'a StdinStream {
     fn write(&mut self, buf: &[u8]) -> io::Result<usize> {
         self.inner.do_io(|inner| (&*inner).write(buf))
     }
@@ -119,7 +119,7 @@ impl<'a> Write for &'a UnixStream {
     }
 }
 
-impl event::Source for UnixStream {
+impl event::Source for StdinStream {
     fn register(
         &mut self,
         registry: &Registry,
@@ -143,32 +143,32 @@ impl event::Source for UnixStream {
     }
 }
 
-impl fmt::Debug for UnixStream {
+impl fmt::Debug for StdinStream {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         self.inner.fmt(f)
     }
 }
 
-impl IntoRawFd for UnixStream {
+impl IntoRawFd for StdinStream {
     fn into_raw_fd(self) -> RawFd {
         self.inner.into_inner().into_raw_fd()
     }
 }
 
-impl AsRawFd for UnixStream {
+impl AsRawFd for StdinStream {
     fn as_raw_fd(&self) -> RawFd {
         self.inner.as_raw_fd()
     }
 }
 
-impl FromRawFd for UnixStream {
-    /// Converts a `RawFd` to a `UnixStream`.
+impl FromRawFd for StdinStream {
+    /// Converts a `RawFd` to a `StdinStream`.
     ///
     /// # Notes
     ///
     /// The caller is responsible for ensuring that the socket is in
     /// non-blocking mode.
-    unsafe fn from_raw_fd(fd: RawFd) -> UnixStream {
-        UnixStream::from_std(FromRawFd::from_raw_fd(fd))
+    unsafe fn from_raw_fd(fd: RawFd) -> StdinStream {
+        StdinStream::from_std(FromRawFd::from_raw_fd(fd))
     }
 }

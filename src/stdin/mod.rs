@@ -1,2 +1,2 @@
 mod stream;
-pub use self::stream::UnixStream;
+pub use self::stream::StdinStream;
